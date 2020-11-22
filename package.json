@@ -2,7 +2,7 @@
   "name": "mnist-load-predict",
   "version": "1.0.0",
   "description": "Loading a tensorflow.js model and predict handwritten digits drawn on a canvas.",
-  "main": "./ts/index.ts",
+  "main": "./src/index.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "webpack-dev-server --config webpack.dev.js",

@@ -3,6 +3,7 @@ import * as d3 from "d3";
 
 import CSS from "../style.css";
 
+const MODEL_URL = "/ressources/mnist-cnn-model.json";
 const IMAGE_SIZE = 28;
 const CANVAS_SCALE = 10;
 const STROKE_WIDTH = CANVAS_SCALE * 1.5;
@@ -176,7 +177,7 @@ export default class MnistLoadPredictComponent extends HTMLElement {
       const result = (<tf.Tensor>this._model?.predict(centeredImage)).as1D();
       const digit = result.argMax().asScalar();
 
-      // render results...
+      // render results with d3
       const percentageFormat = d3.format(".2%");
       const resultData = result.dataSync();
       const digitData = digit.dataSync()[0];
@@ -208,7 +209,7 @@ export default class MnistLoadPredictComponent extends HTMLElement {
       this.writeDrawHere();
     }
 
-    tf.loadLayersModel("/ressources/mnist-cnn-model.json").then((model) => {
+    tf.loadLayersModel(MODEL_URL).then((model) => {
       this._model = model;
     });
 
