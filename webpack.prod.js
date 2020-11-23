@@ -3,7 +3,7 @@ const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
   entry: {
-    "canvas-to-tensor": "./src/index.ts",
+    "mnist-load-predict": "./src/index.ts",
   },
   mode: "production",
   module: {

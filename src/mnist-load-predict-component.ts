@@ -221,6 +221,12 @@ export default class MnistLoadPredictComponent extends HTMLElement {
   }
 
   protected disconnectedCallback() {
+    // dispose tensorflow.js stuff
+    this._model?.dispose();
+    tf.dispose();
+    tf.disposeVariables();
+
+    // remove event listeners
     this._canvas.removeEventListener("mousedown", this._mouseDownHandler);
     this._canvas.removeEventListener("mousemove", this._mouseMoveHandler);
     this._canvas.removeEventListener("touchstart", this._touchStartHandler);
