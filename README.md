@@ -1,4 +1,4 @@
-# canvas-to-tensor
+# MNIST-load-predict
 
 Loading a tensorflow.js model and predict handwritten digits drawn on a canvas.
 
